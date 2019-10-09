@@ -9,7 +9,7 @@ export default class step1 extends Component {
           name:'',
           date:'',
           cpf:0,
-          agree:'off'        }
+          agree:false        }
       }
 
     handleChange = (event) =>{
@@ -22,6 +22,14 @@ export default class step1 extends Component {
         state[field] = event.target.value;
 
         this.setState(state);
+    }
+
+    isChecked = () => {
+        this.setState(prevState => ({
+            agree: !prevState.agree
+        }))
+    }
+
     }
 
     render() {
@@ -54,7 +62,7 @@ export default class step1 extends Component {
                         <label className="cursorP" htmlFor="cpf">CPF</label>
                         <input onChange={(e) => this.handleChange(e)} id="cpf" type="text" placeholder="444.444.444-90" />
                         <div>
-                            <input onChange={(e) => this.handleChange(e)} id="agree" type="checkbox" />
+                            <input onChange={(e) => this.isChecked(e)} id="agree" type="checkbox" />
                             <label className="cursorP" htmlFor="agree">Li e concordo com os termos.</label>
                             <button className="btnBlue itensHovered" type="submit" href="#">Continuar</button>
                         </div>
