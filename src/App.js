@@ -14,10 +14,9 @@ export default class App extends Component {
   }
       render() 
       {
-        <>
         return <Step1 />
-        return<Signup />
-        </>
+        return <Signup />
+        //return <Step2 />
       }
 
 }

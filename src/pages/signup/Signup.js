@@ -24,20 +24,16 @@ export default class Signup extends Component {
     handleActualPage = () => {
         switch(this.state.actualPage){
             case 1:
-                return <h1>Página 02</h1>
+                return <step2 change={this.handleChangePage} />
             case 2:
-                return <h1>Página 03</h1>
+                return <congrats change={this.handleChangePage} />
             default:
                 return<step1 change={this.handleChangePage} />
          }
     }
     
     render() {
-        return (
-           
-
-
-        );
+    console.log(this.state)
+    return this.handlePage();    
     }
-}
 }
